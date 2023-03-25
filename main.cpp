@@ -93,7 +93,7 @@ int main() {
 				switch (opcPilas) {
 				case 1:
 					do {
-						opcPilasOperaciones = menuOpcionesListas();
+						opcPilasOperaciones = menuOpcionesPilas();
 						switch (opcPilasOperaciones) {
 						case 1:
 							break;
@@ -114,7 +114,7 @@ int main() {
 					break;
 				case 2:
 					do {
-						opcPilasOperaciones = menuOpcionesListas();
+						opcPilasOperaciones = menuOpcionesPilas();
 						switch (opcPilasOperaciones) {
 						case 1:
 							break;
@@ -144,10 +144,47 @@ int main() {
 				opcColas = menuColas();
 				switch (opcColas) {
 				case 1:
-					opcColasOperaciones = menuOpcionesColas();
+					do {
+						opcColasOperaciones = menuOpcionesColas();
+						switch (opcColasOperaciones) {
+						case 1:
+							break;
+						case 2:
+							break;
+						case 3:
+							break;
+						case 4:
+							break;
+						case 5:
+							break;
+						case 6:
+							break;
+						default:
+							break;
+						}
+					} while (opcColasOperaciones != 7);
 					break;
 				case 2:
-					opcColasOperaciones = menuOpcionesColas();
+					do {
+						opcColasOperaciones = menuOpcionesColas();
+						switch (opcColasOperaciones) {
+						case 1:
+							break;
+						case 2:
+							break;
+						case 3:
+							break;
+						case 4:
+							break;
+						case 5:
+							break;
+						case 6:
+							break;
+						default:
+							break;
+						}
+					} while (opcColasOperaciones != 7);
+					break;
 					break;
 				default:
 					break;
@@ -283,10 +320,14 @@ int menuOpcionesPilas() {
  */
 int menuOpcionesColas() {
 	int opc;
-	cout << "Menu Tipo de Cola" << endl;
-	cout << "1. Trabajar con ArrayQueue" << endl;
-	cout << "2. Trabajar con LinkedQueue" << endl;
-	cout << "3. Regresar al Menu Principal" << endl;
+	cout << "Operaciones de Colas" << endl;
+	cout << "1. Encolar (queue) " << endl;
+	cout << "2. Desencolar (dequeue)" << endl;
+	cout << "3. Ver Frente (peek)" << endl;
+	cout << "4. Verificar si esta vacia" << endl;
+	cout << "5. Imprimir elementos" << endl;
+	cout << "6. Borrar los elementos" << endl;
+	cout << "7. Regresar al Menu Anterior" << endl;
 	cin >> opc;
 	cout << endl;
 
