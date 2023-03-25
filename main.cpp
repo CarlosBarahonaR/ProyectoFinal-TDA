@@ -28,10 +28,59 @@ int main() {
 				opcListas = menuListas();
 				switch (opcListas) {
 				case 1:
-					opcListasOperaciones = menuOpcionesListas();
+					do {
+						opcListasOperaciones = menuOpcionesListas();
+						switch (opcListasOperaciones) {
+						case 1:
+							break;
+						case 2:
+							break;
+						case 3:
+							break;						
+						case 4:
+							break;						
+						case 5:
+							break;						
+						case 6:
+							break;						
+						case 7:
+							break;						
+						case 8:
+							break;						
+						case 9:
+							break;
+						default:
+							break;
+						}
+					} while (opcListasOperaciones != 10);
 					break;
 				case 2:
-					opcListasOperaciones = menuOpcionesListas();
+					do {
+						opcListasOperaciones = menuOpcionesListas();
+						switch (opcListasOperaciones) {
+						case 1:
+							break;
+						case 2:
+							break;
+						case 3:
+							break;
+						case 4:
+							break;
+						case 5:
+							break;
+						case 6:
+							break;
+						case 7:
+							break;
+						case 8:
+							break;
+						case 9:
+							break;
+						default:
+							break;
+						}
+					} while (opcListasOperaciones != 10);
+					break;
 					break;
 				default:
 					break;
@@ -43,10 +92,47 @@ int main() {
 				opcPilas = menuPilas();
 				switch (opcPilas) {
 				case 1:
-					opcPilasOperaciones = menuOpcionesPilas();
+					do {
+						opcPilasOperaciones = menuOpcionesListas();
+						switch (opcPilasOperaciones) {
+						case 1:
+							break;
+						case 2:
+							break;
+						case 3:
+							break;
+						case 4:
+							break;
+						case 5:
+							break;
+						case 6:
+							break;
+						default:
+							break;
+						}
+					} while (opcPilasOperaciones != 7);
 					break;
 				case 2:
-					opcPilasOperaciones = menuOpcionesPilas();
+					do {
+						opcPilasOperaciones = menuOpcionesListas();
+						switch (opcPilasOperaciones) {
+						case 1:
+							break;
+						case 2:
+							break;
+						case 3:
+							break;
+						case 4:
+							break;
+						case 5:
+							break;
+						case 6:
+							break;
+						default:
+							break;
+						}
+					} while (opcPilasOperaciones != 7);
+					break;
 					break;
 				default:
 					break;
@@ -170,16 +256,20 @@ int menuOpcionesListas() {
 }
 
 /**
- * Menu de opciones de tipo de colas.
+ * Menu de operaciones de implementación de pilas.
  * @param No recibe parametros.
  * @returns Retorna el número de la opción seleccionada.
  */
 int menuOpcionesPilas() {
 	int opc;
-	cout << "Menu Tipo de Cola" << endl;
-	cout << "1. Trabajar con ArrayQueue" << endl;
-	cout << "2. Trabajar con LinkedQueue" << endl;
-	cout << "3. Regresar al Menu Principal" << endl;
+	cout << "Operaciones de Pilas" << endl;
+	cout << "1. Empujar (push) " << endl;
+	cout << "2. Sacar (pop)" << endl;
+	cout << "3. Ver Tope (top)" << endl;
+	cout << "4. Verificar si esta vacia" << endl;
+	cout << "5. Imprimir elementos" << endl;
+	cout << "6. Borrar todos los elementos" << endl;
+	cout << "7. Regresar al Menu Anterior" << endl;
 	cin >> opc;
 	cout << endl;
 
@@ -187,7 +277,7 @@ int menuOpcionesPilas() {
 }
 
 /**
- * Menu de opciones de tipo de colas.
+ * Menu de operaciones de implementación de colas.
  * @param No recibe parametros.
  * @returns Retorna el número de la opción seleccionada.
  */
