@@ -2,14 +2,24 @@
 #include <fstream>
 using namespace std;
 
+//Menus principales
 int menu();
 int menuListas();
 int menuPilas();
 int menuColas();
 
+//Menu secundario de listas
+int menuOpcionesListas();
+
+//Menu secundario de pilas
+int menuOpcionesPilas();
+
+//Menu secundario de colas
+int menuOpcionesColas();
 
 int main() {
-	int opc, opcListas, opcPilas, opcColas;
+	//Variables donde se guardan las opciones
+	int opc, opcListas, opcPilas, opcColas, opcListasOperaciones, opcPilasOperaciones, opcColasOperaciones;
 	do {
 		opc = menu();
 		switch (opc) {
@@ -18,8 +28,10 @@ int main() {
 				opcListas = menuListas();
 				switch (opcListas) {
 				case 1:
+					opcListasOperaciones = menuOpcionesListas();
 					break;
 				case 2:
+					opcListasOperaciones = menuOpcionesListas();
 					break;
 				default:
 					break;
@@ -31,8 +43,10 @@ int main() {
 				opcPilas = menuPilas();
 				switch (opcPilas) {
 				case 1:
+					opcPilasOperaciones = menuOpcionesPilas();
 					break;
 				case 2:
+					opcPilasOperaciones = menuOpcionesPilas();
 					break;
 				default:
 					break;
@@ -44,8 +58,10 @@ int main() {
 				opcColas = menuColas();
 				switch (opcColas) {
 				case 1:
+					opcColasOperaciones = menuOpcionesColas();
 					break;
 				case 2:
+					opcColasOperaciones = menuOpcionesColas();
 					break;
 				default:
 					break;
@@ -58,7 +74,11 @@ int main() {
 	} while (opc != 4);
 }
 
-
+/**
+ * Menu principal.
+ * @param No recibe parametros.
+ * @returns Retorna el número de la opción seleccionada.
+ */
 int menu() {
 	int opc;
 	cout << "Menu Principal" << endl;
@@ -72,6 +92,11 @@ int menu() {
 	return opc;
 }
 
+/**
+ * Menu de opciones de tipo de listas.
+ * @param No recibe parametros.
+ * @returns Retorna el número de la opción seleccionada.
+ */
 int menuListas() {
 	int opc;
 	cout << "Menu Tipo de Lista" << endl;
@@ -84,6 +109,11 @@ int menuListas() {
 	return opc;
 }
 
+/**
+ * Menu de opciones de tipo de pilas.
+ * @param No recibe parametros.
+ * @returns Retorna el número de la opción seleccionada.
+ */
 int menuPilas() {
 	int opc;
 	cout << "Menu Tipo de Pila" << endl;
@@ -96,8 +126,72 @@ int menuPilas() {
 	return opc;
 }
 
-
+/**
+ * Menu de opciones de tipo de colas.
+ * @param No recibe parametros.
+ * @returns Retorna el número de la opción seleccionada.
+ */
 int menuColas() {
+	int opc;
+	cout << "Menu Tipo de Cola" << endl;
+	cout << "1. Trabajar con ArrayQueue" << endl;
+	cout << "2. Trabajar con LinkedQueue" << endl;
+	cout << "3. Regresar al Menu Principal" << endl;
+	cin >> opc;
+	cout << endl;
+
+	return opc;
+}
+
+
+
+/**
+ * Menu de operaciones de implementación de listas.
+ * @param No recibe parametros.
+ * @returns Retorna el número de la opción seleccionada.
+ */
+int menuOpcionesListas() {
+	int opc;
+	cout << "Operaciones de Listas" << endl;
+	cout << "1. Insertar Elemento" << endl;
+	cout << "2. Imprimir Elementos" << endl;
+	cout << "3. Buscar Elemento" << endl;
+	cout << "4. Borrar Elemento" << endl;
+	cout << "5. Ver si esta vacia" << endl;
+	cout << "6. Obtener Elemento por Posicion" << endl;
+	cout << "7. Obtener Siguiente" << endl;
+	cout << "8. Obtener Anterior" << endl;
+	cout << "9. Borrar todos los Elementos (Anula)" << endl;
+	cout << "10. Regresar al Menu Anterior" << endl;
+	cin >> opc;
+	cout << endl;
+
+	return opc;
+}
+
+/**
+ * Menu de opciones de tipo de colas.
+ * @param No recibe parametros.
+ * @returns Retorna el número de la opción seleccionada.
+ */
+int menuOpcionesPilas() {
+	int opc;
+	cout << "Menu Tipo de Cola" << endl;
+	cout << "1. Trabajar con ArrayQueue" << endl;
+	cout << "2. Trabajar con LinkedQueue" << endl;
+	cout << "3. Regresar al Menu Principal" << endl;
+	cin >> opc;
+	cout << endl;
+
+	return opc;
+}
+
+/**
+ * Menu de opciones de tipo de colas.
+ * @param No recibe parametros.
+ * @returns Retorna el número de la opción seleccionada.
+ */
+int menuOpcionesColas() {
 	int opc;
 	cout << "Menu Tipo de Cola" << endl;
 	cout << "1. Trabajar con ArrayQueue" << endl;
