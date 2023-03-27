@@ -1,5 +1,6 @@
 #pragma once
 #include "Node.h"
+#include "Object.h"
 class LinkedStack
 {
 	Node* top;
@@ -7,7 +8,7 @@ public:
 	LinkedStack();
 	~LinkedStack();
 	//Declaración de metodos de pilas
-	void empujar(int);
+	void empujar(Object*);
 	void sacar();
 	void verTope();
 	bool vacio();

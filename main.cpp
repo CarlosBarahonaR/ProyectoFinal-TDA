@@ -8,6 +8,7 @@
 #include "ProyectoFinalTDA/TDAList.h"
 #include "ProyectoFinalTDA/ArrayList.h"
 #include "ProyectoFinalTDA/LinkList.h"
+#include "ProyectoFinalTDA/Simbolo.h"
 
 //Menus principales
 int menu();
@@ -33,6 +34,8 @@ int main() {
 	ArrayStack arregloStack;
 	LinkedStack linkedStack;
 	ArrayQueue arregloQueue;
+	Simbolo* simboloStackPtr = nullptr;
+	Simbolo* simboloArrayPtr = nullptr;
 
 	do {
 		opc = menu();
@@ -110,10 +113,11 @@ int main() {
 								opcPilasOperaciones = menuOpcionesPilas();
 								switch (opcPilasOperaciones) {
 									case 1:
-										int valor;
-										cout << "Ingrese el valor que quiere ingresar al arreglo de pilas" << endl;
-										cin >> valor;
-										arregloStack.empujar(valor);
+										char valorSimbolo;
+										cout << "Ingrese el valor de simbolo que quiere ingresar al stack" << endl;
+										cin >> valorSimbolo;
+										simboloArrayPtr = new Simbolo(valorSimbolo);
+										arregloStack.empujar(simboloArrayPtr);
 										break;
 									case 2:
 										arregloStack.sacar();
@@ -147,10 +151,11 @@ int main() {
 								opcPilasOperaciones = menuOpcionesPilas();
 								switch (opcPilasOperaciones) {
 									case 1:
-										int valor;
-										cout << "Ingrese el valor que quiere ingresar al stack" << endl;
-										cin >> valor;
-										linkedStack.empujar(valor);
+										char valorSimbolo;
+										cout << "Ingrese el valor de simbolo que quiere ingresar al stack" << endl;
+										cin >> valorSimbolo;
+										simboloStackPtr = new Simbolo(valorSimbolo);
+										linkedStack.empujar(simboloStackPtr);
 										break;
 									case 2:
 										linkedStack.sacar();

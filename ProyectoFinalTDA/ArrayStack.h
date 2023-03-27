@@ -1,8 +1,9 @@
 #pragma once
 using namespace std;
+#include "Object.h"
 class ArrayStack
 {
-	int arrayStack[100];
+	Object* arrayStack[100];
 	int tamanio = 100;
 	int top = -1;
 public:
@@ -10,7 +11,7 @@ public:
 	ArrayStack();
 	~ArrayStack();
 	//Declaración de metodos de pilas
-	void empujar(int);
+	void empujar(Object*);
 	void sacar();
 	void verTope();
 	bool vacio();

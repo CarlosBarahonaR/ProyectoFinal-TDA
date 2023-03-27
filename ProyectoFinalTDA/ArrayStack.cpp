@@ -1,4 +1,5 @@
 #include "ArrayStack.h"
+#include "Object.h"
 #include <iostream>
 using namespace std;
 
@@ -18,7 +19,7 @@ ArrayStack::~ArrayStack() {}
  * @param {int} valor Es el valor enviado que va a ser ingresado en el ArrayStack.
  * @returns No retorna nada, pero si imprime un mensaje si se logro insertar o no.
  */
-void ArrayStack::empujar(int valor) {
+void ArrayStack::empujar(Object* valor) {
 	if (this->top < this->tamanio-1) {
 		this->top++;
 		this->arrayStack[this->top] = valor;
@@ -55,7 +56,7 @@ void ArrayStack::sacar() {
  */
 void ArrayStack::verTope() {
 	if (!vacio()) {
-		cout << "El valor en el tope es: " << this->arrayStack[this->top] << endl;
+		cout << "El valor en el tope es: " << this->arrayStack[this->top]->toString() << endl;
 		cout << endl;
 	}
 	else {
@@ -86,7 +87,7 @@ bool ArrayStack::vacio() {
 void ArrayStack::imprimir() {
 	if (!vacio()) {
 		for (int i = -1; i < top; i++) {
-			cout << i+2 << ") " << this->arrayStack[i+1] << endl;
+			cout << i+2 << ") " << this->arrayStack[i+1]->toString() << endl;
 		}
 		cout << endl;
 	}

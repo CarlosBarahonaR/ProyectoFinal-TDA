@@ -1,4 +1,5 @@
 #include "LinkedStack.h"
+#include "Object.h"
 #include <iostream>
 using namespace std;
 
@@ -19,7 +20,7 @@ LinkedStack::~LinkedStack() {}
  * @param {int} valor Es el valor enviado que va a ser ingresado en el LinkedStack.
  * @returns No retorna nada, pero si imprime un mensaje si se logro insertar o no.
  */
-void LinkedStack::empujar(int valor) {
+void LinkedStack::empujar(Object* valor) {
 	Node* nodo = new Node(valor);
 
 	if (!nodo) {
@@ -64,7 +65,7 @@ void LinkedStack::sacar() {
  */
 void LinkedStack::verTope() {
 	if (!vacio()) {
-		cout << "El valor en el tope es: " << this->top->valor << endl;
+		cout << "El valor en el tope es: " << this->top->valor->toString() << endl;
 		cout << endl;
 	}
 	else {
@@ -100,7 +101,7 @@ void LinkedStack::imprimir() {
 
 		do {
 			int i = 1;
-			cout << i << ") " << nodo->valor << endl;
+			cout << i << ") " << nodo->valor->toString() << endl;
 
 			nodo = nodo->siguiente;
 			i++;
@@ -109,7 +110,7 @@ void LinkedStack::imprimir() {
 		cout << endl;
 	}
 	else {
-		cout << "El arreglo de pilas esta vacio." << endl;
+		cout << "El stack esta vacio." << endl;
 		cout << endl;
 	}
 }
@@ -137,9 +138,9 @@ void LinkedStack::borrarElementos() {
 		this->top = NULL;
 
 		cout << endl;
-		cout << "Los elementos del arreglo de pilas fueron eliminados" << endl;
+		cout << "Los elementos del stack fueron eliminados" << endl;
 	}
 	else {
-		cout << "El arreglo de pilas esta vacio." << endl;
+		cout << "El stack esta vacio." << endl;
 	}
 }

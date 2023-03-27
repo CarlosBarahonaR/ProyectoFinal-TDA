@@ -1,16 +1,16 @@
 #pragma once
 #include "Object.h"
-
-class Alumno : public Object {
-	//Declaración de atributos para la clase Alumno
-	string Nombre;
-	string Cuenta;
+class Simbolo : public Object {
+	//Declaración de atributos para la clase Simbolo
+	char simbolo;
 public:
 	//Declaración de constructor y destructor para la clase Alumno
-	Alumno(string, string);
-	~Alumno();
+	Simbolo(char);
+	Simbolo();
+	~Simbolo();
 
 	//Declaración de métodos heredados de la clase Object
 	virtual string toString();
 	virtual bool equals(Object*);
 };
+

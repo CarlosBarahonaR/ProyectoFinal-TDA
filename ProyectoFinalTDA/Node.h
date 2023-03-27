@@ -1,10 +1,11 @@
 #pragma once
+#include "Object.h"
 class Node
 {
 public:
-	int valor;
+	Object* valor;
 	Node* siguiente;
-	Node(int);	
+	Node(Object*);
 	~Node();
 };
 
