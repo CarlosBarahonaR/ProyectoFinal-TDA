@@ -5,8 +5,9 @@
 #include "ProyectoFinalTDA/ArrayQueue.h"
 #include "ProyectoFinalTDA/Alumno.h"
 #include "ProyectoFinalTDA/Object.h"
-
-using namespace std;
+#include "ProyectoFinalTDA/TDAList.h"
+#include "ProyectoFinalTDA/ArrayList.h"
+#include "ProyectoFinalTDA/LinkList.h"
 
 //Menus principales
 int menu();
@@ -281,7 +282,7 @@ int main() {
 /**
  * Menu principal.
  * @param No recibe parametros.
- * @returns Retorna el número de la opción seleccionada.
+ * @returns Retorna el nï¿½mero de la opciï¿½n seleccionada.
  */
 int menu() {
 	int opc;
@@ -300,7 +301,7 @@ int menu() {
 /**
  * Menu de opciones de tipo de listas.
  * @param No recibe parametros.
- * @returns Retorna el número de la opción seleccionada.
+ * @returns Retorna el nï¿½mero de la opciï¿½n seleccionada.
  */
 int menuListas() {
 	int opc;
@@ -318,7 +319,7 @@ int menuListas() {
 /**
  * Menu de opciones de tipo de pilas.
  * @param No recibe parametros.
- * @returns Retorna el número de la opción seleccionada.
+ * @returns Retorna el nï¿½mero de la opciï¿½n seleccionada.
  */
 int menuPilas() {
 	int opc;
@@ -336,7 +337,7 @@ int menuPilas() {
 /**
  * Menu de opciones de tipo de colas.
  * @param No recibe parametros.
- * @returns Retorna el número de la opción seleccionada.
+ * @returns Retorna el nï¿½mero de la opciï¿½n seleccionada.
  */
 int menuColas() {
 	int opc;
@@ -354,9 +355,9 @@ int menuColas() {
 
 
 /**
- * Menu de operaciones de implementación de listas.
+ * Menu de operaciones de implementaciï¿½n de listas.
  * @param No recibe parametros.
- * @returns Retorna el número de la opción seleccionada.
+ * @returns Retorna el nï¿½mero de la opciï¿½n seleccionada.
  */
 int menuOpcionesListas() {
 	int opc;
@@ -379,9 +380,9 @@ int menuOpcionesListas() {
 }
 
 /**
- * Menu de operaciones de implementación de pilas.
+ * Menu de operaciones de implementaciï¿½n de pilas.
  * @param No recibe parametros.
- * @returns Retorna el número de la opción seleccionada.
+ * @returns Retorna el nï¿½mero de la opciï¿½n seleccionada.
  */
 int menuOpcionesPilas() {
 	int opc;
@@ -401,9 +402,9 @@ int menuOpcionesPilas() {
 }
 
 /**
- * Menu de operaciones de implementación de colas.
+ * Menu de operaciones de implementaciï¿½n de colas.
  * @param No recibe parametros.
- * @returns Retorna el número de la opción seleccionada.
+ * @returns Retorna el nï¿½mero de la opciï¿½n seleccionada.
  */
 int menuOpcionesColas() {
 	int opc;
