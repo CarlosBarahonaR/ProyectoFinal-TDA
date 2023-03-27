@@ -1,5 +1,8 @@
+#include "ProyectoFinalTDA/ArrayStack.h"
+#include "ProyectoFinalTDA/LinkedStack.h"
 #include <iostream>
 #include <fstream>
+
 using namespace std;
 
 //Menus principales
@@ -20,6 +23,10 @@ int menuOpcionesColas();
 int main() {
 	//Variables donde se guardan las opciones
 	int opc, opcListas, opcPilas, opcColas, opcListasOperaciones, opcPilasOperaciones, opcColasOperaciones;
+	//Variables con objetos inicializados
+	ArrayStack arregloStack;
+	LinkedStack linkedStack;
+
 	do {
 		opc = menu();
 		switch (opc) {
@@ -96,16 +103,32 @@ int main() {
 						opcPilasOperaciones = menuOpcionesPilas();
 						switch (opcPilasOperaciones) {
 						case 1:
+							int valor;
+							cout << "Ingrese el valor que quiere ingresar al arreglo de pilas" << endl;
+							cin >> valor;
+							arregloStack.empujar(valor);
 							break;
 						case 2:
+							arregloStack.sacar();
 							break;
 						case 3:
+							arregloStack.verTope();
 							break;
 						case 4:
+							if (arregloStack.vacio()) {
+								cout << "El arreglo de pilas esta vacio." << endl;
+								cout << endl;
+							}
+							else {
+								cout << "El arreglo de pilas no esta vacio." << endl;
+								cout << endl;
+							}
 							break;
 						case 5:
+							arregloStack.imprimir();
 							break;
 						case 6:
+							arregloStack.borrarElementos();
 							break;
 						default:
 							break;
@@ -117,16 +140,32 @@ int main() {
 						opcPilasOperaciones = menuOpcionesPilas();
 						switch (opcPilasOperaciones) {
 						case 1:
+							int valor;
+							cout << "Ingrese el valor que quiere ingresar al stack" << endl;
+							cin >> valor;
+							linkedStack.empujar(valor);
 							break;
 						case 2:
+							linkedStack.sacar();
 							break;
 						case 3:
+							linkedStack.verTope();
 							break;
 						case 4:
+							if (linkedStack.vacio()) {
+								cout << "El stack esta vacio." << endl;
+								cout << endl;
+							}
+							else {
+								cout << "El stack no esta vacio." << endl;
+								cout << endl;
+							}
 							break;
 						case 5:
+							linkedStack.imprimir();
 							break;
 						case 6:
+							linkedStack.borrarElementos();
 							break;
 						default:
 							break;
