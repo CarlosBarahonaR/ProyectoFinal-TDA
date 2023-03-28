@@ -5,6 +5,7 @@ class Node
 public:
 	Object* valor;
 	Node* siguiente;
+	Node* anterior;
 	Node(Object*);
 	~Node();
 };

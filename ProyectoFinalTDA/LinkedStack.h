@@ -4,6 +4,7 @@
 class LinkedStack
 {
 	Node* top;
+	Node* inicio;
 public:
 	LinkedStack();
 	~LinkedStack();
