@@ -40,7 +40,7 @@ void buscarElementoPosicionLista(TDAList*);
 void siguienteElementoLista(TDAList*);
 void anteriorElementoLista(TDAList*);
 void borrarTodosElementosLista(TDAList*);
-bool isDigit(char);
+bool verificarDigito(char);
 
 int main() {
 	//Variables donde se guardan las opciones
@@ -585,7 +585,7 @@ void menuOperacionesList(TDAList* lista, int tipo)
 * @param {caracter}
 * @return bool indicando si el caracter es un digito o no
 */
-bool isDigit(char caracter){
+bool verificarDigito(char caracter){
   int cero = 48;
   int nueve = 57;
   return (int)caracter >= cero && (int)caracter <= nueve;
@@ -603,14 +603,14 @@ int leerSeleccionNumerica(int cantidadOpciones){
   getline(cin,linea);
   if (linea.length() > 1 && tieneMasdeNueveOpciones)
   {
-    bool validarElemento1 = isDigit(linea[0]);
-    bool validarElemento2 = isDigit(linea[1]);
+    bool validarElemento1 = verificarDigito(linea[0]);
+    bool validarElemento2 = verificarDigito(linea[1]);
     if (validarElemento1 && validarElemento2)
       seleccion = atoi(&linea[0]);
   }
   else
   {
-    if (isDigit(linea[0]))
+    if (verificarDigito(linea[0]))
       seleccion = atoi(&linea[0]);
   }
   return seleccion;
@@ -719,7 +719,7 @@ int solicitarEnteroPosivo(){
     getline(cin,numeroString);
     for (size_t i = 0; i < numeroString.length(); i++)
     {
-      if (!isDigit(numeroString[0]))
+      if (!verificarDigito(numeroString[0]))
       {
         esNumero = false;
         break;
