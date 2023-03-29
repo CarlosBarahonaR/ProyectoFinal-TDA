@@ -20,7 +20,7 @@ ArrayStack::~ArrayStack() {}
  * @returns No retorna nada, pero si imprime un mensaje si se logro insertar o no.
  */
 void ArrayStack::empujar(Object* valor) {
-	if (this->top < this->tamanio-1) {
+	if (this->top < this->tamanio - 1) {
 		this->top++;
 		this->arrayStack[this->top] = valor;
 		cout << "El valor fue ingresado de manera exitosa." << endl;
@@ -87,7 +87,7 @@ bool ArrayStack::vacio() {
 void ArrayStack::imprimir() {
 	if (!vacio()) {
 		for (int i = -1; i < top; i++) {
-			cout << i+2 << ") " << this->arrayStack[i+1]->toString() << endl;
+			cout << i + 2 << ") " << this->arrayStack[i + 1]->toString() << endl;
 		}
 		cout << endl;
 	}

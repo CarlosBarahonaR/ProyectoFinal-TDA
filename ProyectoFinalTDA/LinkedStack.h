@@ -1,8 +1,7 @@
 #pragma once
 #include "Node.h"
 #include "Object.h"
-class LinkedStack
-{
+class LinkedStack {
 	Node* top;
 	Node* inicio;
 public:

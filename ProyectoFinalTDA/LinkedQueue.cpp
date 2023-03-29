@@ -20,7 +20,7 @@ LinkedQueue :: ~LinkedQueue() {
 
 // vacia todos los elementos de la cola
 
-void LinkedQueue :: Vaciar() {
+void LinkedQueue::Vaciar() {
 	front = NULL;
 	back = NULL;
 }
@@ -40,7 +40,7 @@ void LinkedQueue::Imprimir() {
 Node* LinkedQueue::Frente() {
 	Node* Nodo = NULL;
 	if (!EstaVacia()) {
-		cout<<front->valor->toString();
+		cout << front->valor->toString();
 	}
 	return Nodo;
 }
@@ -71,24 +71,24 @@ void LinkedQueue::Encolar(Object* elemento) {
 }
 
 // desencola el ultimo puesto en el back
-	Node* LinkedQueue::Desencolar() {
-		if (!EstaVacia()) {
-			// Almacena el front anterior
-			// y mueve front un nodo adelante
-			Node* temp = front;
-			front = front->siguiente;
+Node* LinkedQueue::Desencolar() {
+	if (!EstaVacia()) {
+		// Almacena el front anterior
+		// y mueve front un nodo adelante
+		Node* temp = front;
+		front = front->siguiente;
 
-			// Si front se vuelve NULL
-			// back también se cambia a NULL
-			if (front == NULL) {
-				back = NULL;
-			}
-
-			cout << temp->valor->toString();
-
-			return temp;
-
-			delete (temp);
+		// Si front se vuelve NULL
+		// back también se cambia a NULL
+		if (front == NULL) {
+			back = NULL;
 		}
-		return nullptr;
+
+		cout << temp->valor->toString();
+
+		return temp;
+
+		delete (temp);
 	}
+	return nullptr;
+}

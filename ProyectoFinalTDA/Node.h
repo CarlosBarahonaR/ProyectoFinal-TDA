@@ -1,8 +1,7 @@
 #ifndef NODE_H
 #define NODE_H
 #include "Object.h"
-class Node
-{
+class Node {
 public:
 	Object* valor;
 	Node* siguiente;

@@ -1,11 +1,10 @@
 #pragma once
 #include "Object.h"
 #include "Node.h"
-class LinkedQueue
-{
+class LinkedQueue {
 	Node* front;
 	Node* back;
-public :
+public:
 	LinkedQueue();
 	~LinkedQueue();
 	void Encolar(Object* elemento);
@@ -14,7 +13,5 @@ public :
 	void Imprimir();
 	void Vaciar();
 	bool EstaVacia();
-
-
 };
 

@@ -1,8 +1,7 @@
 #pragma once
 using namespace std;
 #include "Object.h"
-class ArrayStack
-{
+class ArrayStack {
 	Object* arrayStack[100];
 	int tamanio = 100;
 	int top = -1;

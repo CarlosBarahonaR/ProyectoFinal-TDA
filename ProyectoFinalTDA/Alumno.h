@@ -13,9 +13,9 @@ public:
 	~Alumno();
 
 	// Declacion de getters
-  string getNombreAlumno();
-  string getNumeroCuenta();
-	
+	string getNombreAlumno();
+	string getNumeroCuenta();
+
 	//Declaraci�n de m�todos heredados de la clase Object
 	string toString();
 	bool equals(Object*);

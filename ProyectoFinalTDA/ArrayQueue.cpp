@@ -28,11 +28,7 @@ int ArrayQueue::Size()
 		return 0;
 	}
 
-	if (back < front) {
-		return MAX_SIZE - (front - back) + 1;
-	}
-
-	return back - front + 1;
+	return back + 1;
 }
 
 /*
@@ -48,14 +44,12 @@ void ArrayQueue::Encolar(Object* elemento)
 		return;
 	}
 
-	//El % se utiliza para que back pueda ir alrededor
-	back = (back + 1) % MAX_SIZE;
+	back = back + 1;
 	Cola[back] = elemento;
 
 	if (front == -1) {
 		front = 0;
 	}
-
 }
 
 /*
@@ -82,8 +76,7 @@ Object* ArrayQueue::Desencolar()
 		return temp;
 	}
 
-	//El % se utiliza para que front pueda ir alrededor
-	front = (front + 1) % MAX_SIZE;
+	front = front + 1;
 
 	return temp;
 }

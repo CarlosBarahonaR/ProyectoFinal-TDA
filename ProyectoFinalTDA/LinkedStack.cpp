@@ -61,13 +61,15 @@ void LinkedStack::sacar() {
 		delete nodo;
 		cout << "El valor fue sacado de manera exitosa." << endl;
 		cout << endl;
-	} else if (this->top != this->inicio) {
+	}
+	else if (this->top != this->inicio) {
 		this->inicio = NULL;
 		this->top = NULL;
 		delete nodo;
 		cout << "El valor fue sacado de manera exitosa." << endl;
 		cout << endl;
-	} else {
+	}
+	else {
 		cout << "El stack esta vacio." << endl;
 		cout << endl;
 	}
@@ -111,7 +113,7 @@ bool LinkedStack::vacio() {
 void LinkedStack::imprimir() {
 	if (!vacio()) {
 		Node* nodo;
-		
+
 		nodo = this->inicio;
 
 		do {
@@ -120,7 +122,7 @@ void LinkedStack::imprimir() {
 
 			nodo = nodo->siguiente;
 			i++;
-		} while (nodo!=NULL);
+		} while (nodo != NULL);
 
 		cout << endl;
 	}

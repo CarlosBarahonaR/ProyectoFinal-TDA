@@ -2,8 +2,8 @@
 
 Alumno::Alumno()
 {
-  nombreAlumno = "";
-  numeroCuenta = "";
+	nombreAlumno = "";
+	numeroCuenta = "";
 }
 
 
@@ -46,10 +46,10 @@ bool Alumno::equals(Object* A) {
 
 string Alumno::getNombreAlumno()
 {
-  return nombreAlumno;
+	return nombreAlumno;
 }
 
 string Alumno::getNumeroCuenta()
 {
-  return numeroCuenta;
+	return numeroCuenta;
 }
