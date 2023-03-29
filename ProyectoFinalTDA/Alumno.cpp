@@ -1,11 +1,18 @@
 #include "Alumno.h"
 
+Alumno::Alumno()
+{
+  nombreAlumno = "";
+  numeroCuenta = "";
+}
+
+
 /*
  * Constructor de la clase Alumno
  */
-Alumno::Alumno(string Nombre, string Cuenta) {
-	this->Nombre = Nombre;
-	this->Cuenta = Cuenta;
+Alumno::Alumno(string nombreAlumno, string numeroCuenta) {
+	this->nombreAlumno = nombreAlumno;
+	this->numeroCuenta = numeroCuenta;
 }
 
 /*
@@ -17,23 +24,32 @@ Alumno::~Alumno() {
 
 /*
  * Muestra los datos sobre el Alumno.
- * @param No recibe ningún parametro.
- * @returns Retorna una cadena con los atributos Nombre y Cuenta.
+ * @param No recibe ningï¿½n parametro.
+ * @returns Retorna una cadena con los atributos nombreAlumno y numeroCuenta.
  */
 string Alumno::toString() {
-	string salida = "Alumno: " + Nombre + " - " + Cuenta + "\n";
-
+	string salida = nombreAlumno + " - " + numeroCuenta + "\n";
 	return salida;
 }
 
 /*
  * Compara la Clase (this) con el objeto.
- * @param {Object* A} Es un objeto el cual será comparado a esta Clase (this).
- * @returns Retorna un booleano verificando si el parámetro es igual al Alumno.
+ * @param {Object* A} Es un objeto el cual serï¿½ comparado a esta Clase (this).
+ * @returns Retorna un booleano verificando si el parï¿½metro es igual al Alumno.
  */
 bool Alumno::equals(Object* A) {
 	if (this == A) {
 		return true;
 	}
 	return false;
+}
+
+string Alumno::getNombreAlumno()
+{
+  return nombreAlumno;
+}
+
+string Alumno::getNumeroCuenta()
+{
+  return numeroCuenta;
 }

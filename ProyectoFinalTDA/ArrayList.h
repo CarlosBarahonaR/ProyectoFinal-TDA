@@ -2,6 +2,7 @@
 #define  ARRAYLIST_H
 #include "TDAList.h"
 
+// Clase ArrayList
 class ArrayList : public TDAList
 {
 private:

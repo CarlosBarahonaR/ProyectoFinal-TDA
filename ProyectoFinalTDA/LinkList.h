@@ -3,6 +3,7 @@
 #include "TDAList.h"
 #include "Node.h"
 
+// Clase LinkList
 class LinkList : public TDAList
 {
 private:

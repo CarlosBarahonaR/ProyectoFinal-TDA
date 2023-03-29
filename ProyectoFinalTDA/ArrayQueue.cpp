@@ -18,9 +18,9 @@ ArrayQueue::~ArrayQueue() {
 }
 
 /*
- * Muestra el tamaño del ArrayQueue.
- * @param No recibe ningún parametro.
- * @returns Retorna un entero, el cual contiene el tamaño del ArrayQueue.
+ * Muestra el tamaï¿½o del ArrayQueue.
+ * @param No recibe ningï¿½n parametro.
+ * @returns Retorna un entero, el cual contiene el tamaï¿½o del ArrayQueue.
  */
 int ArrayQueue::Size()
 {
@@ -42,7 +42,7 @@ int ArrayQueue::Size()
  */
 void ArrayQueue::Encolar(Object* elemento)
 {
-	//No dejar que la cola crezca más que (tamaño máximo -1)
+	//No dejar que la cola crezca mï¿½s que (tamaï¿½o mï¿½ximo -1)
 	if (Size() == MAX_SIZE) {
 		cout << "Se ha llegado al tamanio maximo\n";
 		return;
@@ -60,8 +60,8 @@ void ArrayQueue::Encolar(Object* elemento)
 
 /*
  * Saca el elemento en la parte frontal del ArrayQueue.
- * @param No recibe ningún parametro.
- * @returns Retorna el elemento que se sacó.
+ * @param No recibe ningï¿½n parametro.
+ * @returns Retorna el elemento que se sacï¿½.
  */
 Object* ArrayQueue::Desencolar()
 {
@@ -74,8 +74,8 @@ Object* ArrayQueue::Desencolar()
 
 	cout << temp->toString();
 
-	//Si el último elemento es desencolado
-	//la cola retornará a su estado inicial
+	//Si el ï¿½ltimo elemento es desencolado
+	//la cola retornarï¿½ a su estado inicial
 	if (front == back) {
 		front = -1;
 		back = -1;
@@ -90,7 +90,7 @@ Object* ArrayQueue::Desencolar()
 
 /*
  * Muestra el elemento en la parte frontal del ArrayQueue.
- * @param No recibe ningún parametro.
+ * @param No recibe ningï¿½n parametro.
  * @returns Retorna el elemento de la parte frontal del ArrayQueue.
  */
 Object* ArrayQueue::Frente()
@@ -98,12 +98,13 @@ Object* ArrayQueue::Frente()
 	if (!EstaVacia()) {
 		return Cola[front];
 	}
+	return NULL;
 }
 
 /*
- * Muestra si el ArrayQueue está vacío.
- * @param No recibe ningún parametro.
- * @returns Retorna TRUE si el ArrayQueue esta vacío y FALSE si no lo está.
+ * Muestra si el ArrayQueue estï¿½ vacï¿½o.
+ * @param No recibe ningï¿½n parametro.
+ * @returns Retorna TRUE si el ArrayQueue esta vacï¿½o y FALSE si no lo estï¿½.
  */
 bool ArrayQueue::EstaVacia()
 {
@@ -112,7 +113,7 @@ bool ArrayQueue::EstaVacia()
 
 /*
  * Borra todos los elementos del ArrayQueue.
- * @param No recibe ningún parametro.
+ * @param No recibe ningï¿½n parametro.
  * @returns No retorna nada.
  */
 void ArrayQueue::Vaciar() {
@@ -128,7 +129,7 @@ void ArrayQueue::Vaciar() {
 
 /*
  * Imprime todos los elementos del ArrayQueue.
- * @param No recibe ningún parametro.
+ * @param No recibe ningï¿½n parametro.
  * @returns No retorna nada pero si imprime todos los valores que se encuentran en el ArrayQueue.
  */
 void ArrayQueue::Imprimir()

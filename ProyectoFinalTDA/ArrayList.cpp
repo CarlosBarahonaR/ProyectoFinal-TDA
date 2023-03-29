@@ -3,7 +3,9 @@
 
 using std::cout;
 using std::endl;
-
+/*
+* Contructor Arraylist
+*/
 ArrayList::ArrayList()
 {
   this->capacidad = 10000;
@@ -13,11 +15,18 @@ ArrayList::ArrayList()
     array[i] = NULL;
 }
 
+/*
+* Destructor Arraylist
+*/
 ArrayList::~ArrayList()
 {
   delete array;
 }
 
+/*
+* Funcion que inserta de un objecto en la lista
+* @param {data} es tipo Object
+*/
 bool ArrayList::inserta(Object * data, int posicion)
 {
   int index = posicion - 1;
@@ -25,7 +34,7 @@ bool ArrayList::inserta(Object * data, int posicion)
   {
     return false;
   }
-  if (posicion == size)
+  if (index == size)
   {
     array[index] = data;
     size++;
@@ -43,12 +52,19 @@ bool ArrayList::inserta(Object * data, int posicion)
   return true;
 }
 
+/*
+* Funcion para agregar al final de lista
+* @param {data} es tipo Object
+*/
 bool ArrayList::append(Object * data)
 {
-  inserta(data, size + 1);
-  return false;
+  return inserta(data, size + 1);
 }
 
+/*
+* Funcion que localiza si un objecto esta en la lista
+* @param {data} es tipo Object
+*/
 int ArrayList::localiza(Object * data)
 {
   for (int i = 0; i < size ; i++)
@@ -61,6 +77,10 @@ int ArrayList::localiza(Object * data)
   return -1;
 }
 
+/*
+* Funcion que devuelve un Objecto de la lista en base a un posicion
+* @param {posicion} es tipo entero
+*/
 Object* ArrayList::recupera(int posicion)
 {
   if (posicion < 1 || posicion > size )
@@ -70,6 +90,11 @@ Object* ArrayList::recupera(int posicion)
   return array[posicion - 1];
 }
 
+/*
+* Funcion que suprime un objecto de la lista de una posicion en especifo
+* @param {data} es tipo Object
+* @return {Object} retorna un Objecto que alocado en el heap
+*/
 Object* ArrayList::suprime(int posicion)
 {
   if (posicion < 1 || posicion > size)
@@ -86,6 +111,10 @@ Object* ArrayList::suprime(int posicion)
   return temp;
 }
 
+/*
+* Funcion que borra todo los elementos de la lista
+* @param {data} es tipo Object
+*/
 void ArrayList::anula()
 {
   for (int i = 0; i < size; i++)
@@ -96,6 +125,11 @@ void ArrayList::anula()
   size = 0;
 }
 
+/*
+* Funcion que devuelve el primer objecto en la lista
+* @param {data} es tipo Object
+* @return tipo Objecto 
+*/
 Object* ArrayList::primero()
 {
   if (size == 0)
@@ -105,6 +139,11 @@ Object* ArrayList::primero()
   return array[0];
 }
 
+/*
+* Funcion que devuelve el objecto anterior de la lista de un posicion
+* @param {posicion} es tipo int
+* @return tipo Objecto 
+*/
 Object* ArrayList::anterior(int posicion)
 {
   if (size == 0 || posicion < 2 || posicion > size)
@@ -114,6 +153,11 @@ Object* ArrayList::anterior(int posicion)
   return array[posicion - 2];
 }
 
+/*
+* Funcion que devuelve el objecto siguiente de la lista de un posicion
+* @param {posicion} es tipo int
+* @return tipo Objecto 
+*/
 Object* ArrayList::siguiente(int posicion)
 {
   if (size == 0 || posicion < 1 || posicion > size)
@@ -123,11 +167,17 @@ Object* ArrayList::siguiente(int posicion)
   return array[posicion];
 }
 
+/*
+* Funcion que indica si la lista esta vacia
+*/
 bool ArrayList::vacia()
 {
   return size == 0;
 }
 
+/*
+* Funcion que imprime todo los elementos si la lista no esta vacia
+*/
 void ArrayList::imprime()
 {
   if (size == 0)
@@ -137,6 +187,6 @@ void ArrayList::imprime()
   }
   for (int i = 0; i < size; i++)
   {
-    cout << (array[i]->toString()) << std::endl;
+    cout << (i+1) << ". " << (array[i]->toString()) << std::endl;
   }
 }

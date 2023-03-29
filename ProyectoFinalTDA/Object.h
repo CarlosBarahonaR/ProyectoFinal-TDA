@@ -6,7 +6,9 @@ using namespace std;
 
 class Object {
 public:
-	//Declaración de métodos para la clase Object
+	//Declaraciï¿½n de mï¿½todos para la clase Object
+	Object();
+	virtual ~Object();
 	virtual string toString() = 0;
 	virtual bool equals(Object*) = 0;
 };
