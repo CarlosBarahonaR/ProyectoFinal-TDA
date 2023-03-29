@@ -1,7 +1,7 @@
 #ifndef ARRAYLIST_H
 #define  ARRAYLIST_H
 #include "TDAList.h"
-
+#include "Object.h"
 // Clase ArrayList
 class ArrayList : public TDAList
 {

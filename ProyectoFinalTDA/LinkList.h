@@ -2,7 +2,7 @@
 #define  LINKLIST_H
 #include "TDAList.h"
 #include "Node.h"
-
+#include "Object.h"
 // Clase LinkList
 class LinkList : public TDAList
 {

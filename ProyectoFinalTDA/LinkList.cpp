@@ -1,6 +1,7 @@
 #include "LinkList.h"
 #include "iostream"
-
+#include "Object.h"
+#include "Node.h"
 /*
 * Contructor Linklist
 */

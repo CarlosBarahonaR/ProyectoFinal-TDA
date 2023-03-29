@@ -9,6 +9,7 @@
 #include "ProyectoFinalTDA/ArrayList.h"
 #include "ProyectoFinalTDA/LinkList.h"
 #include "ProyectoFinalTDA/Simbolo.h"
+#include "ProyectoFinalTDA/LinkedQueue.h"
 
 //Menus principales
 int menu();
@@ -30,10 +31,12 @@ int main() {
 	int opc, opcListas, opcPilas, opcColas, opcListasOperaciones, opcPilasOperaciones, opcColasOperaciones;
 	//Variables donde se guardan los datos para los objetos
 	string nombreAlumno, numeroCuenta;
+	string Nombre, Cuenta;
 	//Variables con objetos inicializados
 	ArrayStack arregloStack;
 	LinkedStack linkedStack;
 	ArrayQueue arregloQueue;
+	LinkedQueue linkedQueue;
 	Simbolo* simboloStackPtr = nullptr;
 	Simbolo* simboloArrayPtr = nullptr;
 
@@ -199,20 +202,63 @@ int main() {
 							do {
 								opcColasOperaciones = menuOpcionesColas();
 								switch (opcColasOperaciones) {
-									case 1:
-										break;
-									case 2:
-										break;
-									case 3:
-										break;
-									case 4:
-										break;
-									case 5:
-										break;
-									case 6:
-										break;
-									default:
-										break;
+								case 1:
+									cout << "Ingrese el nombre del alumno: ";
+									cin.ignore();
+									getline(cin, Nombre);
+
+									cout << "Ingrese el numero de cuenta del alumno: ";
+									cin >> Cuenta;
+
+									linkedQueue.Encolar(new Alumno(Nombre, Cuenta));
+									break;
+								case 2:
+									if (!linkedQueue.EstaVacia()) {
+										cout << "Alumno Desencolado: " << endl;
+										linkedQueue.Desencolar();
+									}
+									else {
+										cout << "!La cola esta vacia" << endl;
+									}
+
+
+									break;
+								case 3:
+									if (!linkedQueue.EstaVacia()) {
+										linkedQueue.Frente();
+									}
+									else {
+										cout << "!La cola esta vacia" << endl;
+									}
+
+									break;
+								case 4:
+									if (linkedQueue.EstaVacia()) {
+										cout << "Esta vacia" << endl;
+									}
+									else {
+										cout << "No esta vacia" << endl;
+									}
+									break;
+								case 5:
+									if (linkedQueue.EstaVacia()) {
+										cout << "!La cola esta vacia" << endl;
+									}
+									else {
+										linkedQueue.Imprimir();
+									}
+									break;
+								case 6:
+									if (linkedQueue.EstaVacia()) {
+										cout << "!La cola ya esta vacia" << endl;
+									}
+									else {
+										linkedQueue.Vaciar();
+										cout << "La cola se ha vaciado exitosamente!\n";
+									}
+									break;
+								default:
+									break;
 								}
 							} while (opcColasOperaciones != 7);
 							break;
@@ -509,7 +555,7 @@ void menuOperacionesList(TDAList* lista, int tipo)
 bool isDigit(char caracter){
   int cero = 48;
   int nueve = 57;
-  return (int)caracter >= cero & (int)caracter <= nueve;
+  return (int)caracter >= cero && (int)caracter <= nueve;
 }
 
 /*
@@ -602,12 +648,12 @@ void buscarElementoLista(TDAList* lista)
     return;
   }
   int size = lista->getSize();
-  Alumno* alumno;
+  Alumno* alumno = nullptr;
   bool encontrado = false;
   int indice = -1;
   for (size_t i = 1; i <= size; i++)
   {
-    alumno = dynamic_cast<Alumno*>(lista->recupera(i));
+	alumno = dynamic_cast<Alumno*>(lista->recupera(i));
     if (alumno != NULL)
     {
       if (numeroCuenta == alumno->getNumeroCuenta())
