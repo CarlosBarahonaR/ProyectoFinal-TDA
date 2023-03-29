@@ -26,6 +26,22 @@ int menuOpcionesPilas();
 //Menu secundario de colas
 int menuOpcionesColas();
 
+// Declaracion de funciones para uso previo a la implementacion
+void menuOperacionesList(TDAList*, int);
+int leerSeleccionNumerica(int);
+
+// Declaracion de funciones que contiene las operaciones de las listas
+void agregarElementoLista(TDAList*);
+void imprimirElementosLista(TDAList*);
+void buscarElementoLista(TDAList*);
+void borrarElementoLista(TDAList*);
+void listaVacia(TDAList*);
+void buscarElementoPosicionLista(TDAList*);
+void siguienteElementoLista(TDAList*);
+void anteriorElementoLista(TDAList*);
+void borrarTodosElementosLista(TDAList*);
+bool isDigit(char);
+
 int main() {
 	//Variables donde se guardan las opciones
 	int opc, opcListas, opcPilas, opcColas, opcListasOperaciones, opcPilasOperaciones, opcColasOperaciones;
@@ -286,15 +302,21 @@ int main() {
  * @returns Retorna el n�mero de la opci�n seleccionada.
  */
 int menu() {
-	int opc = 0;
 	cout << endl;
-  cout << "===================== MENU =======================" << std::endl;
+    cout << "===================== MENU =======================" << std::endl;
 	cout << "1. Trabajar con Listas" << endl;
 	cout << "2. Trabajar con Pilas" << endl;
 	cout << "3. Trabajar con Colas" << endl;
 	cout << "4. Salir" << endl;
-  cout << "Ingrese la opcion que desea ejecutar: ";
+    cout << "Ingrese la opcion que desea ejecutar: ";
+    int opc = 0;
 	cin >> opc;
+	while (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+		cout << "Ingrese una opcion valida: ";
+		cin >> opc;
+	} 
 	return opc;
 }
 
@@ -329,6 +351,12 @@ int menuPilas() {
 	cout << "2. Trabajar con LinkedStack" << endl;
 	cout << "3. Regresar al Menu Principal" << endl;
 	cin >> opc;
+	while (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+		cout << "Ingrese una opcion valida: ";
+		cin >> opc;
+	}
 	cout << endl;
 
 	return opc;
@@ -347,6 +375,12 @@ int menuColas() {
 	cout << "2. Trabajar con LinkedQueue" << endl;
 	cout << "3. Regresar al Menu Principal" << endl;
 	cin >> opc;
+	while (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+		cout << "Ingrese una opcion valida: ";
+		cin >> opc;
+	}
 	cout << endl;
 
 	return opc;
@@ -396,6 +430,12 @@ int menuOpcionesPilas() {
 	cout << "6. Borrar todos los elementos" << endl;
 	cout << "7. Regresar al Menu Anterior" << endl;
 	cin >> opc;
+	while (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+		cout << "Ingrese una opcion valida: ";
+		cin >> opc;
+	}
 	cout << endl;
 
 	return opc;
@@ -418,6 +458,12 @@ int menuOpcionesColas() {
 	cout << "6. Borrar los elementos" << endl;
 	cout << "7. Regresar al Menu Anterior" << endl;
 	cin >> opc;
+	while (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+		cout << "Ingrese una opcion valida: ";
+		cin >> opc;
+	}
 	cout << endl;
 
 	return opc;
@@ -425,20 +471,7 @@ int menuOpcionesColas() {
 
 // APARTADO DE LISTA DE AQUI PARA ABAJO
 
-// Declaracion de funciones para uso previo a la implementacion
-void menuOperacionesList(TDAList*, int);
-int leerSeleccionNumerica(int);
 
-// Declaracion de funciones que contiene las operaciones de las listas
-void agregarElementoLista(TDAList*);
-void imprimirElementosLista(TDAList*);
-void buscarElementoLista(TDAList*);
-void borrarElementoLista(TDAList*);
-void listaVacia(TDAList*);
-void buscarElementoPosicionLista(TDAList*);
-void siguienteElementoLista(TDAList*);
-void anteriorElementoLista(TDAList*);
-void borrarTodosElementosLista(TDAList*);
 
 /*
 * Funcion que muestra el menu de listas y no retorna nada
